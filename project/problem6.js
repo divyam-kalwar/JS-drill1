@@ -3,14 +3,18 @@
 
 
 function BMWAndAudi(inventory){
-    let bmwAndAudi = [];
-
-    for(const car of inventory){
-        if(car.car_make === "BMW" || car.car_make === "Audi"){
-            bmwAndAudi.push(car);
-        }
+    if (inventory.length === 0) {
+        return "Inventory is empty";
     }
-    return JSON.stringify(bmwAndAudi);
+    const result =  inventory.filter(car => 
+        ["BMW", "Audi"].includes(car.car_make)
+    );
+
+    if (result.length === 0) {
+        return "No BMW or Audi cars found in the inventory";
+    }
+
+    return JSON.stringify(result);
 }
 
 module.exports = BMWAndAudi;
