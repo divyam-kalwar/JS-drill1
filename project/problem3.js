@@ -3,10 +3,13 @@
 
 function carModels(inventory){
     let carModels = [];
-    for(const car of inventory){
+    inventory.map(car =>{
         carModels.push(car.car_model);
+    });
+    if(carModels.length === 0) {
+        return "Inventory is empty";
     }
-    return carModels.sort();
+    return carModels.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 }
 
 module.exports = carModels;
