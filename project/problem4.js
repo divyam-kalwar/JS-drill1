@@ -3,11 +3,7 @@
 
 
 function carYears(inventory){
-    let years = [];
-    for(const car of inventory){
-        years.push(car.car_year);
-    }
-    return years;
+    return inventory.map(car => car.car_year);
 }
 
 module.exports = carYears;
