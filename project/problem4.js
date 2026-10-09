@@ -3,6 +3,9 @@
 
 
 function carYears(inventory){
+    if(inventory.length === 0) {
+        return "Inventory is empty";
+    }
     return inventory.map(car => car.car_year);
 }
 

@@ -3,6 +3,9 @@
 
 function carModels(inventory){
     let carModels = [];
+    if(inventory.length === 0) {
+        return "Inventory is empty";
+    }
     inventory.map(car =>{
         carModels.push(car.car_model);
     });

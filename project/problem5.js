@@ -5,19 +5,9 @@ const carYears = require("./problem4");
 
 
 function oldCars(inventory){
-    let oldCarsYears = [];
-    let carYears = [];
+    const carYears = inventory.map(car => car.car_year);
 
-    for(const car of inventory){
-        carYears.push(car.car_year);
-    }
-
-    for(let year of carYears){
-        if(year<2000){
-            oldCarsYears.push(year);
-        }
-    }
-    return oldCarsYears;
+    return carYears.filter(year => year < 2000);
 }
 
 module.exports = oldCars;
